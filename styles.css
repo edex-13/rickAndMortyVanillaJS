@@ -1,0 +1,210 @@
+/* Importacion de la fuente */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap');
+/* Variables de los colores */
+:root {
+   --color-white: #fff;
+   --color-black: #000;
+   --color-primary: #ffd000;
+   --color-secondary: rgb(14, 20, 27);
+   --color-terciary: #e7076c;
+}
+/* Estilos generales de la pagina */
+* {
+   margin: 0;
+   padding: 0;
+   font-family: 'Open Sans', sans-serif;
+}
+body {
+   background-color: var(--color-secondary);
+}
+/* Estilos del Header */
+.Header-main {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin: 30px 50px;
+}
+
+.Header a {
+   text-decoration: none;
+   color: var(--color-terciary);
+}
+.Header a:hover {
+   text-decoration: underline;
+}
+
+/* Estilos de Main */
+
+.Main {
+   margin-top: 60px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+/* Estilos de las tarjetas de cada personaje */
+
+.Characters {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-gap: 50px;
+   grid-row-gap: 90px;
+}
+.Character-item {
+   width: 300px;
+   height: 410px;
+   padding: 30px 10px;
+   background-color: rgba(255, 255, 255, 0.2);
+   border: 3px var(--color-white) solid;
+   border-radius: 20px;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   position: relative;
+}
+.Character-item img {
+   width: 90%;
+}
+.Character-item h2 {
+   padding: 20px;
+   color: var(--color-primary);
+}
+.Character-item a {
+   position: absolute;
+   right: 20px;
+   bottom: 20px;
+}
+.btn {
+   font-size: 16px;
+   font-weight: bolder;
+   width: 100px;
+   height: 40px;
+   border: 3px var(--color-black) solid;
+   color: var(--color-black);
+   background-color: var(--color-primary);
+   cursor: pointer;
+}
+.btn:hover {
+   transform: translateY(-20%);
+   transition: transform 0.3s;
+   background-color: var(--color-black);
+   border-color: var(--color-primary);
+   color: var(--color-primary);
+}
+/* Estilos para hacer resposive la pagina Principal */
+@media (max-width: 1024px) {
+   .Characters {
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 25px;
+      grid-row-gap: 80px;
+   }
+   .Character-item {
+      width: 210px;
+      height: 350px;
+   }
+}
+@media (max-width: 768px) {
+   .Characters {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 25px;
+      grid-row-gap: 80px;
+   }
+   .Character-item {
+      width: 250px;
+   }
+}
+
+@media (max-width: 520px) {
+   .Characters {
+      grid-template-columns: 1fr;
+      grid-row-gap: 80px;
+   }
+   .Character-item {
+      width: 280px;
+      height: 390px;
+   }
+}
+
+/* Estilos de la pagina para cada personaje */
+.Characters-inner {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   align-items: center;
+}
+.Characters-card {
+   width: 400px;
+   margin-right: 100px;
+   display: flex;
+   justify-content: center;
+}
+.Characters-card img {
+   width: 80%;
+}
+.Characters-card--details {
+   animation-duration: 2s;
+   animation-name: fade;
+}
+.Characters-card--details > h2 {
+   padding: 10px;
+   font-size: 30px;
+   color: var(--color-terciary);
+}
+.Characters-card--details > h3 {
+   padding: 13px;
+   color: var(--color-primary);
+   font-weight: bold;
+}
+.Characters-card--details > h3 > span {
+   padding: 13px;
+   color: #fff;
+   font-weight: lighter;
+}
+@keyframes fade {
+   from {
+      opacity: 0;
+   }
+   to {
+      opacity: 1;
+   }
+}
+@media (max-width: 770px) {
+   .Characters-card {
+      display: flex;
+      justify-content: center;
+      margin: 0px;
+   }
+   .Characters-card--details > h2 {
+      padding: 10px;
+      color: var(--color-terciary);
+   }
+   .Characters-card--details > h3 {
+      padding: 8px;
+      color: var(--color-primary);
+      font-weight: bold;
+   }
+   .Characters-card--details > h3 > span {
+      padding: 13px;
+      color: #fff;
+      font-weight: lighter;
+   }
+}
+
+@media (max-width: 600px) {
+   .Header-main {
+      margin: 20px;
+   }
+   .Characters-inner {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-row-gap: 30px;
+      align-items: center;
+   }
+
+   .Characters-card {
+      width: auto;
+      margin: 0px;
+   }
+   .Characters-card--details {
+      margin-left: 15px;
+   }
+}
