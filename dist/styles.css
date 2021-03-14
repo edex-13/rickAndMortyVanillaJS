@@ -6,7 +6,7 @@
    --color-black: #000;
    --color-primary: #ffd000;
    --color-secondary: rgb(14, 20, 27);
-   --color-terciary: #ff5252;
+   --color-terciary: #e7076c;
 }
 /* Estilos generales de la pagina */
 * {
@@ -27,7 +27,7 @@ body {
 
 .Header a {
    text-decoration: none;
-   color: var(--color-white);
+   color: var(--color-terciary);
 }
 .Header a:hover {
    text-decoration: underline;
@@ -36,8 +36,7 @@ body {
 /* Estilos de Main */
 
 .Main {
-   padding: 10px;
-   margin: 80px;
+   margin-top: 60px;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -55,7 +54,7 @@ body {
    width: 300px;
    height: 410px;
    padding: 30px 10px;
-   background-color: rgba(255, 255, 255, 0.3);
+   background-color: rgba(255, 255, 255, 0.2);
    border: 3px var(--color-white) solid;
    border-radius: 20px;
    display: flex;
@@ -68,7 +67,7 @@ body {
 }
 .Character-item h2 {
    padding: 20px;
-   color: var(--color-terciary);
+   color: var(--color-primary);
 }
 .Character-item a {
    position: absolute;
@@ -92,6 +91,7 @@ body {
    border-color: var(--color-primary);
    color: var(--color-primary);
 }
+/* Estilos para hacer resposive la pagina Principal */
 @media (max-width: 1024px) {
    .Characters {
       grid-template-columns: repeat(3, 1fr);
@@ -100,7 +100,7 @@ body {
    }
    .Character-item {
       width: 210px;
-      height: 325px;
+      height: 350px;
    }
 }
 @media (max-width: 768px) {
@@ -117,11 +117,81 @@ body {
 @media (max-width: 520px) {
    .Characters {
       grid-template-columns: 1fr;
-      grid-gap: 60px;
       grid-row-gap: 80px;
    }
    .Character-item {
-      width: 300px;
-      height: 400px;
+      width: 280px;
+      height: 390px;
+   }
+}
+
+/* Estilos de la pagina para cada personaje */
+.Characters-inner {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   align-items: center;
+}
+.Characters-card {
+   width: 400px;
+   margin-right: 100px;
+   display: flex;
+   justify-content: center;
+}
+.Characters-card img {
+   width: 80%;
+}
+.Characters-card--details > h2 {
+   padding: 10px;
+   font-size: 30px;
+   color: var(--color-terciary);
+}
+.Characters-card--details > h3 {
+   padding: 13px;
+   color: var(--color-primary);
+   font-weight: bold;
+}
+.Characters-card--details > h3 > span {
+   padding: 13px;
+   color: #fff;
+   font-weight: lighter;
+}
+@media (max-width: 770px) {
+   .Characters-card {
+      display: flex;
+      justify-content: center;
+      margin: 0px;
+   }
+   .Characters-card--details > h2 {
+      padding: 10px;
+      color: var(--color-terciary);
+   }
+   .Characters-card--details > h3 {
+      padding: 8px;
+      color: var(--color-primary);
+      font-weight: bold;
+   }
+   .Characters-card--details > h3 > span {
+      padding: 13px;
+      color: #fff;
+      font-weight: lighter;
+   }
+}
+
+@media (max-width: 600px) {
+   .Header-main {
+      margin: 20px;
+   }
+   .Characters-inner {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      align-items: center;
+   }
+
+   .Characters-card {
+      width: auto;
+      margin: 0px;
+   }
+   .Characters-card--details {
+      margin-left: 10px;
    }
 }

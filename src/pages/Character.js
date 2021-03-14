@@ -8,10 +8,10 @@ const Character = async () => {
         <div class="Characters-inner">
             <article class="Characters-card">
                 <img src="${character.image}" alt="${character.name}" />
-                <h2>${character.name}</h2>
             </article>
             <article class="Characters-card--details">
-                <h3>
+                <h2>${character.name}</h2>
+                <h3>    
                     Episodes:
                     <span>${character.episode.length}</span>
                 </h3>
@@ -38,6 +38,7 @@ const Character = async () => {
             </article>
         </div>
     `;
+    console.log(character)
    return view;
 };
 export default Character;
