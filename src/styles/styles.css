@@ -6,7 +6,7 @@
    --color-black: #000;
    --color-primary: #ffd000;
    --color-secondary: rgb(14, 20, 27);
-   --color-terciary: #ff5252;
+   --color-terciary: #e7076c;
 }
 /* Estilos generales de la pagina */
 * {
@@ -27,7 +27,7 @@ body {
 
 .Header a {
    text-decoration: none;
-   color: var(--color-white);
+   color: var(--color-terciary);
 }
 .Header a:hover {
    text-decoration: underline;
@@ -38,7 +38,7 @@ body {
 .Main {
    padding: 10px;
    margin: 80px;
-   display: flex;
+   display: grid;
    justify-content: center;
 }
 
@@ -47,14 +47,14 @@ body {
 .Characters {
    display: grid;
    grid-template-columns: repeat(3, 1fr);
-   grid-gap: 60px;
+   grid-gap: 50px;
    grid-row-gap: 90px;
 }
 .Character-item {
-   min-width: 280px;
+   width: 300px;
    height: 410px;
    padding: 30px 10px;
-   background-color: rgba(255, 255, 255, 0.3);
+   background-color: rgba(255, 255, 255, 0.2);
    border: 3px var(--color-white) solid;
    border-radius: 20px;
    display: flex;
@@ -67,7 +67,7 @@ body {
 }
 .Character-item h2 {
    padding: 20px;
-   color: var(--color-terciary);
+   color: var(--color-primary);
 }
 .Character-item a {
    position: absolute;
@@ -91,24 +91,62 @@ body {
    border-color: var(--color-primary);
    color: var(--color-primary);
 }
-
+/* Estilos para hacer resposive la pagina Principal */
+@media (max-width: 1024px) {
+   .Characters {
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 25px;
+      grid-row-gap: 80px;
+   }
+   .Character-item {
+      width: 210px;
+      height: 350px;
+   }
+}
 @media (max-width: 768px) {
-	.Characters {
-		grid-template-columns: repeat(2, 1fr);
-      grid-gap: 25px
-	}
+   .Characters {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 25px;
+      grid-row-gap: 80px;
+   }
    .Character-item {
       width: 250px;
    }
 }
 
 @media (max-width: 520px) {
-	.Characters {
-		grid-template-columns: 1fr;
+   .Characters {
+      grid-template-columns: 1fr;
       grid-gap: 60px;
-	}
+      grid-row-gap: 80px;
+   }
    .Character-item {
       width: 300px;
+      height: 400px;
    }
+}
 
+/* Estilos de la pagina para cada personaje */
+.Characters-inner {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   grid-gap: 250px;
+}
+.Characters-card {
+   width: 350px;
+   height: 410px;
+   padding: 30px 10px;
+   background-color: rgba(255, 255, 255, 0.2);
+   border: 3px var(--color-white) solid;
+   border-radius: 20px;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+.Characters-card  img {
+   width: 90%;
+}
+.Characters-card  h2 {
+   padding: 20px;
+   color: var(--color-primary);
 }
